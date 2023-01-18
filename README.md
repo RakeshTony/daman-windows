@@ -1,4 +1,4 @@
-# Miza.ly
+# Daman.ly
 
 A new Flutter project.
 
