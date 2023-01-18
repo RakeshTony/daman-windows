@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "968307106231",
+    "firebase_url": "https://mizaly-c516b-default-rtdb.firebaseio.com",
+    "project_id": "mizaly-c516b",
+    "storage_bucket": "mizaly-c516b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:968307106231:android:84eda8de06a6c458608832",
+        "android_client_info": {
+          "package_name": "com.daman.ly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "968307106231-pddu4c5udmmfl3g8p2gp2dc81i1l5sec.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPe1V7SMDXLD6zAShcioGwyjyifnYLQOs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "968307106231-pddu4c5udmmfl3g8p2gp2dc81i1l5sec.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

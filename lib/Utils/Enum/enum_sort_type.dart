@@ -1,0 +1,7 @@
+enum SortTypeDownLine {
+  NONE,
+  RANK,
+  RECENT_ADDED,
+  RECENT_WALLET_TOPUP,
+  LOW_WALLET_BALANCE,
+}

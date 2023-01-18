@@ -1,0 +1,316 @@
+[
+  {
+    "id": "40153461",
+    "columnName": "POLICY NUMBER",
+    "columnType": "ALL",
+    "customFieldDropDown": [
+    ],
+    "columnLength": "60",
+    "required": true,
+    "dataLoadRuleId": 0,
+    "activeStatus": "Y"
+  },
+  {
+    "id": "107886848133",
+    "columnName": "Agent Phone Number",
+    "columnType": "N",
+    "customFieldDropDown": [
+    ],
+    "columnLength": "20",
+    "required": true,
+    "dataLoadRuleId": 100,
+    "activeStatus": null
+  },
+  {
+    "id": "107886839369",
+    "columnName": "Service Bill",
+    "columnType": "AN",
+    "customFieldDropDown": [
+    ],
+    "columnLength": "10",
+    "required": true,
+    "dataLoadRuleId": 29,
+    "activeStatus": null
+  },
+  {
+    "id": "41959113",
+    "columnName": "ACADEMIC QUALIFICATION",
+    "columnType": "DD",
+    "customFieldDropDown": [
+      {
+        "description": "BACHELOR DEGREE",
+        "itemphoto": null,
+        "itemname": null,
+        "fixedprice": "false",
+        "unitprice": "0",
+        "code": "BACHELOR DEGREE",
+        "accountid": "0",
+        "id": "110011194266"
+      },
+      {
+        "description": "DIPLOMA DEGREE",
+        "itemphoto": null,
+        "itemname": null,
+        "fixedprice": "false",
+        "unitprice": "0",
+        "code": "DIPLOMA DEGREE",
+        "accountid": "0",
+        "id": "110011194267"
+      },
+      {
+        "description": "PRIMARY SCHOOL DEGREE",
+        "itemphoto": null,
+        "itemname": null,
+        "fixedprice": "false",
+        "unitprice": "0",
+        "code": "PRIMARY SCHOOL DEGREE",
+        "accountid": "0",
+        "id": "110011194268"
+      },
+      {
+        "description": "SECONDARY SCHOOL DEGREE",
+        "itemphoto": null,
+        "itemname": null,
+        "fixedprice": "false",
+        "unitprice": "0",
+        "code": "SECONDARY SCHOOL DEGREE",
+        "accountid": "0",
+        "id": "110011194269"
+      }
+    ],
+    "columnLength": "10",
+    "required": true,
+    "dataLoadRuleId": 0,
+    "activeStatus": null
+  },
+  {
+    "id": "41958683",
+    "columnName": "DATE OF DELIVERY",
+    "columnType": "D",
+    "customFieldDropDown": [
+    ],
+    "columnLength": "0",
+    "required": true,
+    "dataLoadRuleId": 0,
+    "activeStatus": "Y"
+  },
+  {
+    "id": "40153462",
+    "columnName": "Amount Item List",
+    "columnType": "SP",
+    "customFieldDropDown": [
+      {
+        "description": "TUITION FEE",
+        "itemphoto": null,
+        "itemname": null,
+        "fixedprice": "true",
+        "unitprice": "1000",
+        "code": "TUITION FEE",
+        "accountid": "6049031",
+        "id": "40153530"
+      },
+      {
+        "description": "TUITION FEE",
+        "itemphoto": null,
+        "itemname": null,
+        "fixedprice": "true",
+        "unitprice": "1000",
+        "code": "TUITION FEE",
+        "accountid": "6049031",
+        "id": "40153529"
+      }
+    ],
+    "columnLength": "0",
+    "required": true,
+    "dataLoadRuleId": 0,
+    "activeStatus": "Y"
+  },
+  {
+    "id": "41958975",
+    "columnName": "AGE",
+    "columnType": "N",
+    "customFieldDropDown": [
+    ],
+    "columnLength": "10",
+    "required": true,
+    "dataLoadRuleId": 0,
+    "activeStatus": "Y"
+  },
+  {
+    "id": "41958974",
+    "columnName": "GENDER",
+    "columnType": "A",
+    "customFieldDropDown": [
+    ],
+    "columnLength": "10",
+    "required": true,
+    "dataLoadRuleId": 0,
+    "activeStatus": "Y"
+  },
+  {
+    "id": "41958976",
+    "columnName": "NAME OF INTRODUCER",
+    "columnType": "ALL",
+    "customFieldDropDown": [
+    ],
+    "columnLength": "10",
+    "required": true,
+    "dataLoadRuleId": 0,
+    "activeStatus": "Y"
+  },
+  {
+    "id": "41958970",
+    "columnName": "DATE OF BIRTH",
+    "columnType": "D",
+    "customFieldDropDown": [
+    ],
+    "columnLength": "0",
+    "required": true,
+    "dataLoadRuleId": 0,
+    "activeStatus": "Y"
+  },
+  {
+    "id": "41958983",
+    "columnName": "TYPE OF PLAN",
+    "columnType": "SL",
+    "customFieldDropDown": [
+      {
+        "description": "A",
+        "itemphoto": null,
+        "itemname": null,
+        "fixedprice": "false",
+        "unitprice": "0",
+        "code": "A",
+        "accountid": "0",
+        "id": "41959010"
+      },
+      {
+        "description": "B",
+        "itemphoto": null,
+        "itemname": null,
+        "fixedprice": "false",
+        "unitprice": "0",
+        "code": "B",
+        "accountid": "0",
+        "id": "41959011"
+      },
+      {
+        "description": "C",
+        "itemphoto": null,
+        "itemname": null,
+        "fixedprice": "false",
+        "unitprice": "0",
+        "code": "C",
+        "accountid": "0",
+        "id": "41959012"
+      },
+      {
+        "description": "D",
+        "itemphoto": null,
+        "itemname": null,
+        "fixedprice": "false",
+        "unitprice": "0",
+        "code": "D",
+        "accountid": "0",
+        "id": "41959013"
+      }
+    ],
+    "columnLength": "10",
+    "required": true,
+    "dataLoadRuleId": 0,
+    "activeStatus": "Y"
+  },
+  {
+    "id": "41958971",
+    "columnName": "Amount Item List",
+    "columnType": "SP",
+    "customFieldDropDown": [
+      {
+        "description": "ITEM A",
+        "itemphoto": null,
+        "itemname": null,
+        "fixedprice": "false",
+        "unitprice": "0",
+        "code": "ITEM A",
+        "accountid": "26329403",
+        "id": "41959004"
+      },
+      {
+        "description": "ITEM B",
+        "itemphoto": null,
+        "itemname": null,
+        "fixedprice": "false",
+        "unitprice": "0",
+        "code": "ITEM B",
+        "accountid": "26329404",
+        "id": "41959005"
+      }
+    ],
+    "columnLength": "0",
+    "required": true,
+    "dataLoadRuleId": 0,
+    "activeStatus": "Y"
+  },
+  {
+    "id": "41958977",
+    "columnName": "ADDRESS",
+    "columnType": "AN",
+    "customFieldDropDown": [
+    ],
+    "columnLength": "10",
+    "required": true,
+    "dataLoadRuleId": 0,
+    "activeStatus": "Y"
+  },
+  {
+    "id": "41958978",
+    "columnName": "STATE OF ORIGIN",
+    "columnType": "DD",
+    "customFieldDropDown": [
+      {
+        "description": "ABIA",
+        "itemphoto": null,
+        "itemname": null,
+        "fixedprice": "false",
+        "unitprice": "0",
+        "code": "ABIA",
+        "accountid": "0",
+        "id": "41959006"
+      },
+      {
+        "description": "ADAMAWA",
+        "itemphoto": null,
+        "itemname": null,
+        "fixedprice": "false",
+        "unitprice": "0",
+        "code": "ADAMAWA",
+        "accountid": "0",
+        "id": "41959007"
+      },
+      {
+        "description": "daman",
+        "itemphoto": null,
+        "itemname": null,
+        "fixedprice": "false",
+        "unitprice": "0",
+        "code": "daman",
+        "accountid": "0",
+        "id": "41959008"
+      },
+      {
+        "description": "KWARA",
+        "itemphoto": null,
+        "itemname": null,
+        "fixedprice": "false",
+        "unitprice": "0",
+        "code": "KWARA",
+        "accountid": "0",
+        "id": "41959009"
+      }
+    ],
+    "columnLength": "10",
+    "required": true,
+    "dataLoadRuleId": 0,
+    "activeStatus": "Y"
+  }
+]

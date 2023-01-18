@@ -1,0 +1,110 @@
+name: daman
+description: A new Flutter project.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  flutter_phoenix: ^1.0.0
+  flutter_bloc: ^7.0.0
+  device_info_plus: ^3.2.4
+  dio: ^4.0.4
+  shared_preferences: ^2.0.7
+  url_launcher: ^6.0.10
+  webview_flutter: ^2.0.13
+  encrypt: ^5.0.1
+  # Hive Database
+  hive: ^2.0.5
+  hive_flutter: ^1.1.0
+  intl: ^0.17.0
+  flutter_layout_grid: ^1.0.3
+  qr_code_scanner: ^1.0.0
+  image_picker: ^0.8.4+11
+  image_cropper: ^1.5.0
+  path: ^1.8.0
+  carousel_slider: ^4.0.0
+  firebase_core: ^1.12.0
+  firebase_database: ^9.0.7
+  firebase_messaging: ^11.1.0
+  flutter_local_notifications: ^9.6.0
+  firebase_crashlytics: ^2.6.0
+  #  flutter_inappwebview: ^5.4.3+4
+  #  flutter_html: ^2.2.1
+  cached_network_image: ^3.2.0
+  flutter_flushbar: ^0.0.2
+  share_plus: ^4.0.10
+  fluttercontactpicker: ^4.7.0
+  blue_thermal_printer: ^1.2.2
+  grouped_list: ^5.1.2
+  external_path: ^1.0.1
+  http: ^0.13.5
+  permission_handler: ^10.0.0
+  package_info_plus: ^1.4.2
+  connectivity_plus: ^2.3.7
+  desktop_window: ^0.4.0
+  flutter_dotenv: ^5.0.2
+  file_picker_cross: ^4.6.0
+  crop_image: ^1.0.3
+  image_cropping: ^0.0.13
+  flutter_easyloading: ^3.0.5
+  printing: ^5.9.3
+  pdf: ^3.8.3
+  another_flushbar: ^1.12.29
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  # Hive Database generators
+  build_runner: ^2.1.7
+  hive_generator: ^1.1.2
+  flutter_html: ^2.2.1
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+    - images/
+    - fonts/
+fonts:
+  - family: Noto
+    fonts:
+      - asset: fonts/NotoSansArabic-Regular.ttf
+        weight: 400
+  - family: SofiaPro
+    fonts:
+      - asset: fonts/SofiaPro-UltraLight.ttf
+        weight: 300
+      - asset: fonts/SofiaPro-Regular.ttf
+        weight: 400
+      - asset: fonts/SofiaPro-Medium.ttf
+        weight: 500
+      - asset: fonts/SofiaPro-SemiBold.ttf
+        weight: 700
+  - family: Poppins
+    fonts:
+      - asset: fonts/Poppins-Thin.ttf
+        weight: 100
+      - asset: fonts/Poppins-ExtraLight.ttf
+        weight: 200
+      - asset: fonts/Poppins-Light.ttf
+        weight: 300
+      - asset: fonts/Poppins-Regular.ttf
+        weight: 400
+      - asset: fonts/Poppins-Medium.ttf
+        weight: 500
+      - asset: fonts/Poppins-SemiBold.ttf
+        weight: 600
+      - asset: fonts/Poppins-Bold.ttf
+        weight: 700
+      - asset: fonts/Poppins-ExtraBold.ttf
+        weight: 800
+      - asset: fonts/Poppins-Black.ttf
+        weight: 900
