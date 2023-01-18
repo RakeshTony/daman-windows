@@ -266,8 +266,9 @@ class VoucherPrint extends StatelessWidget {
                   height: 10,
                 ),
                 _getRow_2(
-                    getFormattedString(
-                        Encoder.decodeDefault("${data.pinNumber}")),
+                    getFormattedString(data.pinNumber),
+                    /*getFormattedString(
+                        Encoder.decodeDefault("${data.pinNumber}")),*/
                     32),
                 SizedBox(
                   height: 10,

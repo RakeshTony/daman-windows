@@ -240,9 +240,9 @@ class VoucherRePrint extends StatelessWidget {
                 SizedBox(
                   height: 10,
                 ),
-                _getRow_2(
-                    getFormattedString(
-                        Encoder.decodeDefault("${data.pinNumber}")),
+                _getRow_2(getFormattedString(data.pinNumber),
+                    /*getFormattedString(
+                        Encoder.decodeDefault("${data.pinNumber}")),*/
                     32),
                 SizedBox(
                   height: 10,
