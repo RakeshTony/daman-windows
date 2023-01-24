@@ -14,6 +14,8 @@ import 'package:daman/Utils/app_icons.dart';
 import 'package:daman/Ux/Authentication/ForgotPassword/ViewModel/view_model_forgot_password.dart';
 import 'package:daman/Ux/Dialog/dialog_success.dart';
 
+import '../../../Utils/Widgets/input_field_widget_white_theme.dart';
+
 class ForgotPasswordPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -98,13 +100,13 @@ class _ForgotPasswordBodyState
                 "Forgot Password",
                 fontFamily: RFontWeight.REGULAR,
                 textAlign: TextAlign.center,
-                color: kWhiteColor,
+                color: kColor_1,
                 fontSize: 27,
               ),
               SizedBox(
                 height: 27,
               ),
-              InputFieldWidget.number(
+              InputFieldWidgetWhiteTheme.number(
                 "User ID / Mobile Number",
                 margin: EdgeInsets.only(top: 14, left: 33, right: 33),
                 textEditingController: _numberController,
@@ -135,14 +137,14 @@ class _ForgotPasswordBodyState
                   style: TextStyle(
                       fontWeight: RFontWeight.LIGHT,
                       fontSize: 17,
-                      color: kWhiteColor),
+                      color: kColor_1),
                   children: [
                     TextSpan(
                         text: "Login",
                         style: TextStyle(
                             fontWeight: RFontWeight.REGULAR,
                             fontSize: 17,
-                            color: kWhiteColor),
+                            color: kColor_1),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
                             Navigator.pop(context);

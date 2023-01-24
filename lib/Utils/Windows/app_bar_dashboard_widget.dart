@@ -100,7 +100,7 @@ class AppBarDashboardWidgetState
                         SizedBox(
                           width: 10,
                         ),
-                        _getNotificationIcon(),
+                        //_getNotificationIcon(),
                       ],
                     ),
                   ),
@@ -126,7 +126,7 @@ class AppBarDashboardWidgetState
   Widget _getAppLogo() {
     return Image.asset(
       LOGO,
-      height: 33,
+      height: 36,
       fit: BoxFit.fitHeight,
     );
   }
@@ -163,8 +163,8 @@ class AppBarDashboardWidgetState
                     child: Text(
                       "${mWallet?.currencySign ?? ""} ${(mWallet?.balance ?? 0.0).toSeparatorFormat()}",
                       style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: RFontWeight.REGULAR,
+                          color: kColor_1,
+                          fontWeight: RFontWeight.BOLD,
                           fontSize: 16,
                           fontFamily: RFontFamily.POPPINS),
                     ),
@@ -175,8 +175,8 @@ class AppBarDashboardWidgetState
                 child: Text(
                   "Your Balance",
                   style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: RFontWeight.LIGHT,
+                    color: kColor_1,
+                    fontWeight: RFontWeight.BOLD,
                     fontSize: 12,
                     fontFamily: RFontFamily.POPPINS,
                   ),
@@ -198,7 +198,7 @@ class AppBarDashboardWidgetState
             mainAxisSize: MainAxisSize.min,
             children: [
               PopupMenuButton(
-                color: kMainColor,
+                color: kColor_1,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(
                     Radius.circular(12.0),
@@ -216,14 +216,14 @@ class AppBarDashboardWidgetState
                       AppLocalizations.of(context)!.sendMoney!, 2));
                   list.add(_buildPopupMenuItem(IC_WIN_MENU_7,
                       AppLocalizations.of(context)!.fundRequest!, 7));
-                  if (mPreference.value.userData.posStatus) {
+                  /*if (mPreference.value.userData.posStatus) {
                     list.add(_buildPopupMenuItem(IC_WIN_MENU_7,
                         AppLocalizations.of(context)!.addPurchaseOrder!, 9));
                     list.add(_buildPopupMenuItem(IC_WIN_MENU_7,
                         AppLocalizations.of(context)!.localPinsStock!, 10));
                     list.add(_buildPopupMenuItem(IC_WIN_MENU_7,
                         AppLocalizations.of(context)!.myOrderReport!, 11));
-                  }
+                  }*/
                   list.add(_buildPopupMenuItem(IC_WIN_MENU_3,
                       AppLocalizations.of(context)!.reports!, 3));
                   list.add(_buildPopupMenuItem(IC_WIN_MENU_4,
@@ -324,8 +324,8 @@ class AppBarDashboardWidgetState
                     child: Text(
                       data.userData.name,
                       style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: RFontWeight.REGULAR,
+                        color:kColor_1,
+                        fontWeight: RFontWeight.BOLD,
                         fontSize: 15,
                       ),
                     ),
@@ -334,8 +334,8 @@ class AppBarDashboardWidgetState
                     child: Text(
                       data.userData.email,
                       style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: RFontWeight.LIGHT,
+                        color: kColor_1,
+                        fontWeight: RFontWeight.REGULAR,
                         fontSize: 12,
                       ),
                     ),

@@ -15,6 +15,7 @@ import 'package:flutter/material.dart';
 
 import '../../../Locale/locales.dart';
 import '../../../Routes/routes.dart';
+import '../../Voucher/voucher_reprint.dart';
 import '../dialog_success.dart';
 import 'filter/filter_custom_range_page.dart';
 
@@ -102,81 +103,90 @@ class _DialogMyTransactionsState
           ),
           padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
           decoration: BoxDecoration(
-              color: kMainColor,
+              color: kColor_1,
               borderRadius: BorderRadius.circular(12),
               border: Border.all(color: kTitleBackground, width: 2)),
           child: Column(
             children: [
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    AppLocalizations.of(context)!.myTransactions!,
-                    style: title(),
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      SizedBox(
-                        width: 180,
-                        child: GestureDetector(
-                          onTap: () async {},
-                          child: AbsorbPointer(
-                            child: InputFieldWidget.text(
-                              "From - To Date",
-                              margin: EdgeInsets.only(
-                                left: 16,
-                              ),
-                              textEditingController: _fromDateController,
-                              focusNode: _fromDateNode,
-                              readOnly: true,
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      InkWell(
-                        onTap: () async {
-                          var dialog =
-                              DialogCustomRangeFilter(fromDateTime, toDateTime);
-                          var args = await showDialog(
-                            context: context,
-                            builder: (context) => dialog,
-                          );
-                          if (args != null) {
-                            var data = args as Map<String, dynamic>;
-                            fromDateTime = data["from_date_time"] as DateTime;
-                            toDateTime = data["to_date_time"] as DateTime;
-                            type = data["type"] as String;
-                            number = data["number"] as String;
-                            txnID = data["transaction_id"] as String;
-                            setState(() {});
-                            page = 0;
-                            _loadData(page);
-                          }
-                        },
-                        child: Image.asset(
-                          IC_FILTER_WHITE,
-                          width: 18,
-                          height: 18,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 16),
-                        child: InkWell(
-                          child: Icon(Icons.close, color: kWhiteColor),
-                          onTap: () {
-                            Navigator.pop(context);
-                          },
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              ),
+             Container(
+                 decoration: BoxDecoration(
+                   color: kMainButtonColor,
+                   borderRadius: BorderRadius.all(Radius.circular(8)),
+                 ),
+                 padding:
+                 EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+
+               child:Row(
+                 mainAxisSize: MainAxisSize.max,
+                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                 children: [
+                   Text(
+                     AppLocalizations.of(context)!.myTransactions!,
+                     style: title(),
+                   ),
+                   Row(
+                     mainAxisSize: MainAxisSize.min,
+                     children: [
+                       SizedBox(
+                         width: 180,
+                         child: GestureDetector(
+                           onTap: () async {},
+                           child: AbsorbPointer(
+                             child: InputFieldWidget.text(
+                               "From - To Date",
+                               margin: EdgeInsets.only(
+                                 left: 16,
+                               ),
+                               textEditingController: _fromDateController,
+                               focusNode: _fromDateNode,
+                               readOnly: true,
+                             ),
+                           ),
+                         ),
+                       ),
+                       SizedBox(
+                         width: 10,
+                       ),
+                       InkWell(
+                         onTap: () async {
+                           var dialog =
+                           DialogCustomRangeFilter(fromDateTime, toDateTime);
+                           var args = await showDialog(
+                             context: context,
+                             builder: (context) => dialog,
+                           );
+                           if (args != null) {
+                             var data = args as Map<String, dynamic>;
+                             fromDateTime = data["from_date_time"] as DateTime;
+                             toDateTime = data["to_date_time"] as DateTime;
+                             type = data["type"] as String;
+                             number = data["number"] as String;
+                             txnID = data["transaction_id"] as String;
+                             setState(() {});
+                             page = 0;
+                             _loadData(page);
+                           }
+                         },
+                         child: Image.asset(
+                           IC_FILTER_WHITE,
+                           width: 18,
+                           height: 18,
+                         ),
+                       ),
+                       Padding(
+                         padding: const EdgeInsets.only(left: 16),
+                         child: InkWell(
+                           child: Icon(Icons.close, color: kWhiteColor),
+                           onTap: () {
+                             Navigator.pop(context);
+                           },
+                         ),
+                       ),
+                     ],
+                   )
+                 ],
+               )
+             ),
               Expanded(
                 child: Container(
                   margin: EdgeInsets.only(top: 16),
@@ -189,7 +199,7 @@ class _DialogMyTransactionsState
                       Container(
                         padding: EdgeInsets.all(8),
                         decoration: BoxDecoration(
-                          color: kWalletBackground,
+                          color: kMainButtonColor,
                           borderRadius: BorderRadius.all(Radius.circular(8)),
                         ),
                         child: Row(
@@ -351,12 +361,10 @@ class _DialogMyTransactionsState
               child: InkWell(
                 onTap: () {
                   if (data.type.contains("IssueEpin")) {
-                    Navigator.pushNamed(
-                      context,
-                      PageRoutes.voucherReprintPage,
-                      arguments: {
-                        "orderNumber": data.orderNumber,
-                      },
+                    var dialog = VoucherReprintPage(orderNumber: data.orderNumber,);
+                    showDialog(
+                      context: context,
+                      builder: (context) => dialog,
                     );
                   } else if (data.type.contains("Recharge")) {
                     viewModel.requestReprint(data.transaction);

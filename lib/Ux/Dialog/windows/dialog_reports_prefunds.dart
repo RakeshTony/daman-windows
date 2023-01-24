@@ -60,7 +60,7 @@ class _DialogReportsPrefundsState
           ),
           padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
           decoration: BoxDecoration(
-              color: kMainColor,
+              color: kColor_1,
               borderRadius: BorderRadius.circular(12),
               border: Border.all(color: kTitleBackground, width: 2)),
           child: Column(
@@ -136,7 +136,7 @@ class _DialogReportsPrefundsState
               Container(
                 width: double.maxFinite,
                 decoration: BoxDecoration(
-                  color: kOTPBackground,
+                  color: kMainButtonColor,
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Row(

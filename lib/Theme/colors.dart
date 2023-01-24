@@ -4,8 +4,8 @@ const Color kMainColor = Color(0xffBAE5F6);
 const Color kMainColorTrans = Color(0x7014054c);
 const Color kDisabledColor = Color(0xff616161);
 const Color kOTPBackground = Color(0xff232568);
-const Color kWalletBackground = Color(0xff8d0ec9);
-const Color kTitleBackground = Color(0xff661bab);
+const Color kWalletBackground = Color(0xff272E7A);
+const Color kTitleBackground = Color(0xff272E7A);
 const Color kScreenBackground = Color(0xffebf2f4);
 const Color kTextColor = Color(0xfffff9e9);
 const Color kWhiteColor = Colors.white;
@@ -49,7 +49,7 @@ const Color kColorPending = Color(0xff124a80);
 const Color kColorBackgroundReport = Color(0xfff7f7f7);
 const Color kInputBack = Color(0x3026989e);
 
-const Color kColor_1 = Color(0xff6317cc);
+const Color kColor_1 = Color(0xff272E7A);
 const Color kColor_4 = Color(0xff5913B7);
 const Color kColor_2 = Color(0xffa13fd0);
 const Color kColor_3 = Color(0xff26146b);
@@ -58,4 +58,5 @@ const Color kGradientButtonStart = Color(0xff5919cd);
 const Color kGradientButtonCenter = Color(0xff8d0ec9);
 const Color kGradientButtonEnd = Color(0xff1994f1);
 const Color kScreenBackgroundNew = Color(0xffBAE5F6);
+const Color kOperatorItemBackground= Color(0xff0886B8);
 

@@ -1,6 +1,6 @@
 class AppSettings {
-  static const STAGING = "https://wallet.daman.ly/";
-  static const PRE_PRODUCTION = "https://wallet.daman.ly/";
+  static const STAGING = "http://wallet.daman.ly/";
+  static const PRE_PRODUCTION = "http://wallet.daman.ly/";
   static const BASE_URL = PRE_PRODUCTION;
   static const USER_TOKEN = "601c3839-b704-4d2d-8b1b-6eca2bfc";
   static const USER_IV = "684118cfd61a2c0f";

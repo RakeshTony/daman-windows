@@ -10,7 +10,7 @@ var decorationBackground = BoxDecoration(
   ),
 );
 var decorationCardBackground = BoxDecoration(
-  color: kMainColor,
+  color: kColor_1,
   image: DecorationImage(
     image: AssetImage(IC_CARD_BACKGROUND),
     fit: BoxFit.fill,

@@ -41,7 +41,7 @@ class _ConfigurationSetupBodyState
     viewModel.progressStream.listen((event) {
       progress = event;
       setState(() {});
-      if (progress == 1.0) {
+      if (progress == 0.95) {
         Future.delayed(Duration(seconds: 2), () async {
           if (mPreference.value.mPin.isEmpty) {
             await Navigator.pushNamed(context, PageRoutes.setPin);

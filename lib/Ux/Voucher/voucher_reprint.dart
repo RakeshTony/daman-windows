@@ -87,54 +87,103 @@ class _VoucherReprintBodyState
     var locale = AppLocalizations.of(context)!;
     var theme = Theme.of(context);
     var mediaQuery = MediaQuery.of(context);
-    return  Container(
-        decoration: decorationBackground,
-        child:
-      Scaffold(
-      appBar: AppBarCommonWidget(),
-      // appBar: AppBar(),
-      backgroundColor: kTransparentColor,
-      body: SafeArea(
-        child: DefaultTabController(
-          length: 3,
-          child: Column(
-            children: [
-              Container(
-                width: MediaQuery.of(context).size.width, //.withOpacity(0.73)
-                child: TabBar(
-                  tabs: [
-                    Tab(
-                      text: "ALL",
-                    ),
-                    Tab(
-                      text: "REQUESTED",
-                    ),
-                    Tab(
-                      text: "APPROVED",
-                    ),
-                  ],
-                  isScrollable: false,
-                  indicatorColor: kMainButtonColor,
-                  indicatorSize: TabBarIndicatorSize.label,
+    return WillPopScope(
+        onWillPop: () async => false,
+        child: Dialog(
+            backgroundColor: Colors.transparent,
+            child: Container(
+                constraints: BoxConstraints(
+                  minHeight: 480,
+                  maxHeight: 480,
+                  maxWidth: 720,
+                  minWidth: 720,
                 ),
-              ),
-              Expanded(
-                child: TabBarView(
-                  children: [
-                    VoucherReprint(
-                        pinsNotRequested, VoucherReprintType.NOT_REQUESTED,
-                        callback: (String ids) {
-                      viewModel.requestVoucherReprintRequest(
-                          ids, widget.orderNumber);
-                    }),
-                    VoucherReprint(pinsRequested, VoucherReprintType.REQUESTED),
-                    VoucherReprint(pinsApproved, VoucherReprintType.APPROVED),
-                  ],
-                ),
-              )
-            ],
-          ),
-        ) /*Column(
+                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                decoration: BoxDecoration(
+                    color: kColor_1,
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: kTitleBackground, width: 2)),
+                child: Container(
+                    child: Scaffold(
+                      backgroundColor: kColor_1,
+                      body: SafeArea(
+                        child: DefaultTabController(
+                          length: 3,
+                          child: Column(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: kMainButtonColor,
+                                  borderRadius: BorderRadius.all(Radius.circular(8)),
+                                ),
+                                padding: const EdgeInsets.only(left: 16, right: 16, top: 16,bottom: 16),
+                                child:
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "Voucher Reprint",
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          color: kWhiteColor,
+                                          fontWeight: RFontWeight.LIGHT,
+                                          fontFamily: RFontFamily.POPPINS),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 16),
+                                      child: InkWell(
+                                        child: Icon(Icons.close, color: kWhiteColor),
+                                        onTap: () {
+                                          Navigator.pop(context);
+                                        },
+                                      ),
+                                    ),],),
+                              ),
+                              SizedBox(
+                                height: 16,
+                              ),
+                              Container(
+                                width: MediaQuery.of(context)
+                                    .size
+                                    .width, //.withOpacity(0.73)
+                                child: TabBar(
+                                  tabs: [
+                                    Tab(
+                                      text: "ALL",
+                                    ),
+                                    Tab(
+                                      text: "REQUESTED",
+                                    ),
+                                    Tab(
+                                      text: "APPROVED",
+                                    ),
+                                  ],
+                                  isScrollable: false,
+                                  labelColor: Colors.blue,
+                                  unselectedLabelColor: Colors.grey,
+                                  indicatorColor: kMainButtonColor,
+                                  indicatorSize: TabBarIndicatorSize.label,
+                                ),
+                              ),
+                              Expanded(
+                                child: TabBarView(
+                                  children: [
+                                    VoucherReprint(pinsNotRequested,
+                                        VoucherReprintType.NOT_REQUESTED,
+                                        callback: (String ids) {
+                                      viewModel.requestVoucherReprintRequest(
+                                          ids, widget.orderNumber);
+                                    }),
+                                    VoucherReprint(pinsRequested,
+                                        VoucherReprintType.REQUESTED),
+                                    VoucherReprint(pinsApproved,
+                                        VoucherReprintType.APPROVED),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        ) /*Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
@@ -166,9 +215,9 @@ class _VoucherReprintBodyState
             ),
           ],
         )*/
-        ,
-      ),
-      ));
+                        ,
+                      ),
+                    )))));
   }
 }
 

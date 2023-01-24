@@ -50,7 +50,7 @@ class ViewModelConfigurationSetup extends BaseViewModel {
     await requestAppMedia();
     await requestServiceOperatorsDenomination();
     await requestWallet();
-    await requestPinSettlementEnquiry();
+    //await requestPinSettlementEnquiry();
   }
 
   requestServices() async {

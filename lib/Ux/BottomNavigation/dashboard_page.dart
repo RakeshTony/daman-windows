@@ -140,6 +140,7 @@ class _DashboardPageState
         appBar: AppBarDashboardWidget(widget.scaffoldKey, elevation: 0),
         key: widget.scaffoldKey,
         body: Container(
+          color: kColor_1,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -215,7 +216,7 @@ class _DashboardPageState
                       ],
                     ),
                     Container(
-                      color: kBorderColorActive,
+                      color: kMainButtonColor,
                       child: SizedBox(
                         height: 150,
                         width: double.maxFinite,
@@ -347,7 +348,8 @@ class _DashboardPageState
                 margin: EdgeInsets.only(top: 30),
                 padding: EdgeInsets.only(top: 30),
                 decoration: BoxDecoration(
-                  gradient: CARD_GRADIENT,
+                  /*gradient: CARD_GRADIENT,*/
+                  color:kOperatorItemBackground,
                   borderRadius: BorderRadius.all(Radius.circular(8.0)),
                 ),
                 child: Center(
@@ -392,7 +394,7 @@ class _DashboardPageState
                       visible: mSelectedOperator == operator,
                       child: Container(
                         decoration: BoxDecoration(
-                          color: kGradientButtonEnd,
+                          color: kColor4,
                           shape: BoxShape.circle,
                         ),
                         padding: EdgeInsets.all(4),
@@ -423,8 +425,8 @@ class _DashboardPageState
       child: Container(
         height: double.maxFinite,
         padding: EdgeInsets.only(left: 15, right: 15, top: 15, bottom: 10),
-        decoration: decorationCardBackground,
-        /*decoration: BoxDecoration(
+        //decoration: decorationCardBackground,
+        decoration: BoxDecoration(
           color: kColor_3,
           borderRadius: BorderRadius.all(Radius.circular(8)),
           border: Border.all(
@@ -433,7 +435,7 @@ class _DashboardPageState
                 : kColor_3,
             width: 2,
           ),
-        )*/
+        ),
         child: Column(
           children: [
             Align(
@@ -441,7 +443,7 @@ class _DashboardPageState
                 child: Stack(
                   children: [
                     Container(
-                      margin: EdgeInsets.only(top: 30),
+                      margin: EdgeInsets.only(top: 10),
                       child: AspectRatio(
                         aspectRatio: 2 / 1,
                         child: ClipRRect(
@@ -463,7 +465,7 @@ class _DashboardPageState
                         ),
                       ),
                     ),
-                    Visibility(
+                    /*Visibility(
                       visible: mSelectedDenomination == voucher,
                       child: Container(
 
@@ -473,7 +475,7 @@ class _DashboardPageState
                           color: kColor4,
                         ),
                       ),
-                    ),
+                    ),*/
                   ],
                 )),
             Expanded(
@@ -523,6 +525,29 @@ class _DashboardPageState
                       ),
                     ],
                   ),
+                  /*Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        AppLocalizations.of(context)!.customerPrice!,
+                        style: TextStyle(
+                          color: kWhiteColor,
+                          fontSize: 10,
+                          fontFamily: RFontFamily.POPPINS,
+                          fontWeight: RFontWeight.REGULAR,
+                        ),
+                      ),
+                      Text(
+                        "${_mWallet?.currencySign} ${voucher.denomination}",
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: kWhiteColor,
+                          fontFamily: RFontFamily.POPPINS,
+                          fontWeight: RFontWeight.REGULAR,
+                        ),
+                      ),
+                    ],
+                  ),*/
                 ],
               ),
             ),

@@ -53,7 +53,7 @@ class _SettingsBodyState extends BasePageState<SettingsBody, ViewModelCommon> {
             ),
             padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
             decoration: BoxDecoration(
-                color: kMainColor,
+                color: kColor_1,
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(color: kTitleBackground, width: 2)),
             child:Container(
@@ -62,7 +62,7 @@ class _SettingsBodyState extends BasePageState<SettingsBody, ViewModelCommon> {
           children: [
             Container(
               decoration: BoxDecoration(
-                color: kWalletBackground,
+                color: kMainButtonColor,
                 borderRadius: BorderRadius.all(Radius.circular(8)),
               ),
               padding: const EdgeInsets.only(left: 16, right: 16, top: 16,bottom: 16),

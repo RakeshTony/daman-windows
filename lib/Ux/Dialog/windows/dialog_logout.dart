@@ -30,7 +30,7 @@ class _DialogLogoutState extends BasePageState<DialogLogout, ViewModelCommon> {
           ),
           padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
           decoration: BoxDecoration(
-              color: kMainColor,
+              color: kColor_1,
               borderRadius: BorderRadius.circular(12),
               border: Border.all(color: kTitleBackground, width: 2)),
           child: Column(

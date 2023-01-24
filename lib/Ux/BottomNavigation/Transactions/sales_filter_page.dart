@@ -157,14 +157,21 @@ class _SalesFilterBodyState
       ),
           padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
           decoration: BoxDecoration(
-              color: kMainColor,
+              color: kColor_1,
               borderRadius: BorderRadius.circular(12),
               border: Border.all(color: kTitleBackground, width: 2)),
    child: SafeArea(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Row(
+            Container(
+                decoration: BoxDecoration(
+                  color: kMainButtonColor,
+                  borderRadius: BorderRadius.all(Radius.circular(8)),
+                ),
+                padding:
+                EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+                child:Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -183,7 +190,7 @@ class _SalesFilterBodyState
                   ),
                 ),
               ],
-            ),
+            )),
             ListView(
               shrinkWrap: true,
                 children: [

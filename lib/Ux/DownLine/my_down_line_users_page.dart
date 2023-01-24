@@ -60,7 +60,6 @@ class _MyDownLineUsersBodyState
           context: context,
           builder: (context) => dialog,
         );
-
       }
     }, cancelOnError: false);
     viewModel.validationErrorStream.listen((map) {
@@ -108,7 +107,6 @@ class _MyDownLineUsersBodyState
     });
 */
     viewModel.requestDownlineUsers();
-
   }
 
   void sortData(SortTypeDownLine sort) {
@@ -158,178 +156,205 @@ class _MyDownLineUsersBodyState
             ),
             padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
             decoration: BoxDecoration(
-                color: kMainColor,
+                color: kColor_1,
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(color: kWalletBackground, width: 2)),
-            child:Container(
-      decoration: decorationBackground,
-      child: Scaffold(
-      body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                color: kWalletBackground,
-                borderRadius: BorderRadius.all(Radius.circular(8)),
-              ),
-              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 5),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    AppLocalizations.of(context)!.myDOwnlineUsers!,
-                    style: TextStyle(
-                        fontSize: 14,
-                        color: kWhiteColor,
-                        fontWeight: RFontWeight.LIGHT,
-                        fontFamily: RFontFamily.POPPINS),
+            child: Container(
+              color: kColor_1,
+              child: Scaffold(
+                backgroundColor: kColor_1,
+                body: SafeArea(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: kMainButtonColor,
+                          borderRadius: BorderRadius.all(Radius.circular(8)),
+                        ),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              AppLocalizations.of(context)!.myDOwnlineUsers!,
+                              style: TextStyle(
+                                  fontSize: 14,
+                                  color: kWhiteColor,
+                                  fontWeight: RFontWeight.LIGHT,
+                                  fontFamily: RFontFamily.POPPINS),
+                            ),
+                            Row(
+                              children: [
+                                PopupMenuButton(
+                                  color: kWhiteColor,
+                                  icon: Icon(
+                                    Icons.filter_list,
+                                    color: kWhiteColor,
+                                  ),
+                                  itemBuilder: (context) {
+                                    return [
+                                      PopupMenuItem(
+                                          value: SortTypeDownLine.RANK,
+                                          child: Row(
+                                            children: <Widget>[
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(5),
+                                                child: Icon(
+                                                  Icons.workspaces_outline,
+                                                  color: kMainColor,
+                                                ),
+                                              ),
+                                              Text(
+                                                AppLocalizations.of(context)!
+                                                    .rank!,
+                                                style: TextStyle(
+                                                  fontSize: 16,
+                                                  color: kMainColor,
+                                                  fontFamily:
+                                                      RFontFamily.POPPINS,
+                                                  fontWeight:
+                                                      RFontWeight.REGULAR,
+                                                ),
+                                              )
+                                            ],
+                                          )),
+                                      PopupMenuItem(
+                                          value: SortTypeDownLine.RECENT_ADDED,
+                                          child: Row(
+                                            children: <Widget>[
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(5),
+                                                child: Icon(
+                                                  Icons.person_add,
+                                                  color: kMainColor,
+                                                ),
+                                              ),
+                                              Text(
+                                                AppLocalizations.of(context)!
+                                                    .recentlyAdded!,
+                                                style: TextStyle(
+                                                  fontSize: 16,
+                                                  color: kMainColor,
+                                                  fontFamily:
+                                                      RFontFamily.POPPINS,
+                                                  fontWeight:
+                                                      RFontWeight.REGULAR,
+                                                ),
+                                              )
+                                            ],
+                                          )),
+                                      PopupMenuItem(
+                                          value: SortTypeDownLine
+                                              .RECENT_WALLET_TOPUP,
+                                          child: Row(
+                                            children: <Widget>[
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(5),
+                                                child: Icon(
+                                                  Icons.account_balance_wallet,
+                                                  color: kMainColor,
+                                                ),
+                                              ),
+                                              Text(
+                                                AppLocalizations.of(context)!
+                                                    .recentWalletTopup!,
+                                                style: TextStyle(
+                                                  fontSize: 16,
+                                                  color: kMainColor,
+                                                  fontFamily:
+                                                      RFontFamily.POPPINS,
+                                                  fontWeight:
+                                                      RFontWeight.REGULAR,
+                                                ),
+                                              )
+                                            ],
+                                          )),
+                                      PopupMenuItem(
+                                          value: SortTypeDownLine
+                                              .LOW_WALLET_BALANCE,
+                                          child: Row(
+                                            children: <Widget>[
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(5),
+                                                child: Icon(
+                                                  Icons
+                                                      .account_balance_wallet_outlined,
+                                                  color: kMainColor,
+                                                ),
+                                              ),
+                                              Text(
+                                                AppLocalizations.of(context)!
+                                                    .lowWalletBalance!,
+                                                style: TextStyle(
+                                                  fontSize: 16,
+                                                  color: kMainColor,
+                                                  fontFamily:
+                                                      RFontFamily.POPPINS,
+                                                  fontWeight:
+                                                      RFontWeight.REGULAR,
+                                                ),
+                                              )
+                                            ],
+                                          ))
+                                    ];
+                                  },
+                                  onSelected: (SortTypeDownLine value) {
+                                    sortData(value);
+                                  },
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 16),
+                                  child: InkWell(
+                                    child:
+                                        Icon(Icons.close, color: kWhiteColor),
+                                    onTap: () {
+                                      Navigator.pop(context);
+                                    },
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Expanded(
+                        child: ListView.builder(
+                          itemCount: mData.length,
+                          itemBuilder: (context, index) =>
+                              _itemDownLine(mData[index]),
+                        ),
+                      ),
+                    ],
                   ),
-                  Row(children: [
-                    PopupMenuButton(
-                      color: kWhiteColor,
-                      icon: Icon(
-                        Icons.filter_list,
-                        color: kWhiteColor,
-                      ),
-                      itemBuilder: (context) {
-                        return [
-                          PopupMenuItem(
-                              value: SortTypeDownLine.RANK,
-                              child: Row(
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.all(5),
-                                    child: Icon(
-                                      Icons.workspaces_outline,
-                                      color: kMainColor,
-                                    ),
-                                  ),
-                                  Text(
-                                    AppLocalizations.of(context)!.rank!,
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      color: kMainColor,
-                                      fontFamily: RFontFamily.POPPINS,
-                                      fontWeight: RFontWeight.REGULAR,
-                                    ),
-                                  )
-                                ],
-                              )),
-                          PopupMenuItem(
-                              value: SortTypeDownLine.RECENT_ADDED,
-                              child: Row(
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.all(5),
-                                    child: Icon(
-                                      Icons.person_add,
-                                      color: kMainColor,
-                                    ),
-                                  ),
-                                  Text(
-                                    AppLocalizations.of(context)!.recentlyAdded!,
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      color: kMainColor,
-                                      fontFamily: RFontFamily.POPPINS,
-                                      fontWeight: RFontWeight.REGULAR,
-                                    ),
-                                  )
-                                ],
-                              )),
-                          PopupMenuItem(
-                              value: SortTypeDownLine.RECENT_WALLET_TOPUP,
-                              child: Row(
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.all(5),
-                                    child: Icon(
-                                      Icons.account_balance_wallet,
-                                      color: kMainColor,
-                                    ),
-                                  ),
-                                  Text(
-                                    AppLocalizations.of(context)!.recentWalletTopup!,
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      color: kMainColor,
-                                      fontFamily: RFontFamily.POPPINS,
-                                      fontWeight: RFontWeight.REGULAR,
-                                    ),
-                                  )
-                                ],
-                              )),
-                          PopupMenuItem(
-                              value: SortTypeDownLine.LOW_WALLET_BALANCE,
-                              child: Row(
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.all(5),
-                                    child: Icon(
-                                      Icons.account_balance_wallet_outlined,
-                                      color: kMainColor,
-                                    ),
-                                  ),
-                                  Text(
-                                    AppLocalizations.of(context)!.lowWalletBalance!,
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      color: kMainColor,
-                                      fontFamily: RFontFamily.POPPINS,
-                                      fontWeight: RFontWeight.REGULAR,
-                                    ),
-                                  )
-                                ],
-                              ))
-                        ];
-                      },
-                      onSelected: (SortTypeDownLine value) {
-                        sortData(value);
-                      },
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 16),
-                      child: InkWell(
-                        child: Icon(Icons.close, color: kWhiteColor),
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                      ),
-                    ),
-                  ],),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Expanded(
-              child: ListView.builder(
-                itemCount: mData.length,
-                itemBuilder: (context, index) => _itemDownLine(mData[index]),
-              ),
-            ),
-          ],
-        ),
-      ),
-      bottomNavigationBar: CustomButton(
-        text: AppLocalizations.of(context)!.addDownlineUser!,
-        radius: BorderRadius.all(Radius.circular(34.0)),
-        onPressed: () async {
-         // var result = await Navigator.pushNamed(context, PageRoutes.downLine);
-          /*if (result == 'RELOAD') {
+                ),
+                bottomNavigationBar: CustomButton(
+                  text: AppLocalizations.of(context)!.addDownlineUser!,
+                  radius: BorderRadius.all(Radius.circular(34.0)),
+                  onPressed: () async {
+                    // var result = await Navigator.pushNamed(context, PageRoutes.downLine);
+                    /*if (result == 'RELOAD') {
             // viewModel.requestDownlineUsers();
           }*/
-          var dialog = DownLinePage();
-          showDialog(
-            context: context,
-            builder: (context) => dialog,
-          );
-
-        },
+                    var dialog = DownLinePage();
+                    showDialog(
+                      context: context,
+                      builder: (context) => dialog,
+                    );
+                  },
+                ),
+              ),
+            )),
       ),
-    ),)),),);
+    );
   }
 
   _itemDownLine(DownLineUser user) {
@@ -355,8 +380,9 @@ class _MyDownLineUsersBodyState
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Column(children: [
-                 Text(
+                Column(
+                  children: [
+                    Text(
                       "${user.name}",
                       //textAlign: TextAlign.justify,
                       style: TextStyle(
@@ -365,17 +391,18 @@ class _MyDownLineUsersBodyState
                           fontWeight: RFontWeight.REGULAR,
                           fontSize: 14),
                     ),
-                  Text(
-                    "${user.mobile}",
-                    style: TextStyle(
-                        color: kMainTextColor,
-                        fontFamily: RFontFamily.POPPINS,
-                        fontWeight: RFontWeight.LIGHT,
-                        fontSize: 13),
-                  ),
-                ],),
+                    Text(
+                      "${user.mobile}",
+                      style: TextStyle(
+                          color: kMainTextColor,
+                          fontFamily: RFontFamily.POPPINS,
+                          fontWeight: RFontWeight.LIGHT,
+                          fontSize: 13),
+                    ),
+                  ],
+                ),
 
-              /*  Text(
+                /*  Text(
                   "${user.groupRank}",
                   //textAlign: TextAlign.justify,
                   style: TextStyle(
@@ -393,14 +420,14 @@ class _MyDownLineUsersBodyState
                       },
                       child: Container(
                         height: 32,
-                        padding: EdgeInsets.only(left: 10,right: 10),
+                        padding: EdgeInsets.only(left: 10, right: 10),
                         decoration: BoxDecoration(
                           color: kMainButtonColor,
                           borderRadius: BorderRadius.circular(30),
                         ),
                         child: Center(
                           child: Text(
-                              AppLocalizations.of(context)!.balance!,
+                            AppLocalizations.of(context)!.balance!,
                             style: TextStyle(
                               color: kWhiteColor,
                               fontSize: 14,
@@ -410,14 +437,16 @@ class _MyDownLineUsersBodyState
                         ),
                       ),
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(
+                      height: 10,
+                    ),
                     InkWell(
                       onTap: () {
                         viewModel.requestUserWallet(user.mobile);
                       },
                       child: Container(
                         height: 32,
-                        padding: EdgeInsets.only(left: 10,right: 10),
+                        padding: EdgeInsets.only(left: 10, right: 10),
                         decoration: BoxDecoration(
                           color: kMainButtonColor,
                           borderRadius: BorderRadius.circular(30),
@@ -443,8 +472,6 @@ class _MyDownLineUsersBodyState
           SizedBox(
             height: 12,
           ),
-
-
           SizedBox(
             height: 12,
           ),

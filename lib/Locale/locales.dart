@@ -415,7 +415,7 @@ class AppLocalizations {
   }
 
   String? get customerPrice {
-    return _localizedValues[locale.languageCode]!['yourPrice'];
+    return _localizedValues[locale.languageCode]!['customerPrice'];
   }
 
   String? get localPinStock {

@@ -174,7 +174,7 @@ class _RequestMoneyBodyState
             ),
             padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
             decoration: BoxDecoration(
-                color: kMainColor,
+                color: kColor_1,
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(color: kTitleBackground, width: 2)),
             child: Container(
@@ -183,7 +183,7 @@ class _RequestMoneyBodyState
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                        color: kWalletBackground,
+                        color: kMainButtonColor,
                         borderRadius: BorderRadius.all(Radius.circular(8)),
                       ),
                       padding: EdgeInsets.only(

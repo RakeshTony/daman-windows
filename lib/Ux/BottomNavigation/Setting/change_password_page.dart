@@ -26,7 +26,8 @@ class ChangePasswordBody extends StatefulWidget {
   State<StatefulWidget> createState() => _ChangePasswordBodyState();
 }
 
-class _ChangePasswordBodyState extends BasePageState<ChangePasswordBody, ViewModelChangePassword> {
+class _ChangePasswordBodyState
+    extends BasePageState<ChangePasswordBody, ViewModelChangePassword> {
   TextEditingController _oldController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
   TextEditingController _passwordConfirmController = TextEditingController();
@@ -63,114 +64,119 @@ class _ChangePasswordBodyState extends BasePageState<ChangePasswordBody, ViewMod
     var theme = Theme.of(context);
     var mediaQuery = MediaQuery.of(context);
 
-    return  WillPopScope(
+    return WillPopScope(
         onWillPop: () async => false,
-    child: Dialog(
-    backgroundColor: Colors.transparent,
-    child: Container(
-    constraints: BoxConstraints(
-    minHeight: 480,
-    maxHeight: 480,
-    maxWidth: 720,
-    minWidth: 720,
-    ),
-    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-    decoration: BoxDecoration(
-    color: kMainColor,
-    borderRadius: BorderRadius.circular(12),
-    border: Border.all(color: kTitleBackground, width: 2)),
-    child:Container(
-    decoration: decorationBackground,
-    child: Scaffold(
-      body: SafeArea(
-        child: ListView(
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                color: kWalletBackground,
-                borderRadius: BorderRadius.all(Radius.circular(8)),
-              ),
-              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    AppLocalizations.of(context)!.changePassword!,
-                    style: TextStyle(
-                        fontSize: 14,
-                        color: kWhiteColor,
-                        fontWeight: RFontWeight.LIGHT,
-                        fontFamily: RFontFamily.POPPINS),
+        child: Dialog(
+          backgroundColor: Colors.transparent,
+          child: Container(
+            constraints: BoxConstraints(
+              minHeight: 480,
+              maxHeight: 480,
+              maxWidth: 720,
+              minWidth: 720,
+            ),
+            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+            decoration: BoxDecoration(
+                color: kColor_1,
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: kTitleBackground, width: 2)),
+            child: Container(
+              color: kColor_1,
+              child: Scaffold(
+                backgroundColor: kColor_1,
+                body: SafeArea(
+                  child: ListView(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: kMainButtonColor,
+                          borderRadius: BorderRadius.all(Radius.circular(8)),
+                        ),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              AppLocalizations.of(context)!.changePassword!,
+                              style: TextStyle(
+                                  fontSize: 14,
+                                  color: kWhiteColor,
+                                  fontWeight: RFontWeight.LIGHT,
+                                  fontFamily: RFontFamily.POPPINS),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 16),
+                              child: InkWell(
+                                child: Icon(Icons.close, color: kWhiteColor),
+                                onTap: () {
+                                  Navigator.pop(context);
+                                },
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 16,
+                      ),
+                      InputFieldWidget.password(
+                        AppLocalizations.of(context)!.oldPassword!,
+                        margin: EdgeInsets.only(top: 14, left: 16, right: 16),
+                        textEditingController: _oldController,
+                        focusNode: _oldNode,
+                      ),
+                      InputFieldWidget.password(
+                        AppLocalizations.of(context)!.newPassword!,
+                        margin: EdgeInsets.only(top: 14, left: 16, right: 16),
+                        textEditingController: _passwordController,
+                        focusNode: _passwordNode,
+                      ),
+                      InputFieldWidget.password(
+                        AppLocalizations.of(context)!.confirmPassword!,
+                        margin: EdgeInsets.only(top: 14, left: 16, right: 16),
+                        textEditingController: _passwordConfirmController,
+                        focusNode: _passwordConfirmNode,
+                      ),
+                      CustomButton(
+                        text: AppLocalizations.of(context)!.submit!,
+                        margin: EdgeInsets.only(
+                            top: 14, left: 16, right: 16, bottom: 14),
+                        radius: BorderRadius.all(Radius.circular(34.0)),
+                        onPressed: () {
+                          viewModel.requestChangePassword(_oldController,
+                              _passwordController, _passwordConfirmController);
+                        },
+                      ),
+                    ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 16),
-                    child: InkWell(
-                      child: Icon(Icons.close, color: kWhiteColor),
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                    ),
-                  ),
-                ],
+                ),
+                bottomNavigationBar: CustomButton(
+                  text: locale.forgotPassword!,
+                  color: kColor_1,
+                  radius: BorderRadius.all(Radius.circular(0.0)),
+                  onPressed: () {
+                    showAlertDialog(context);
+                  },
+                ),
               ),
             ),
-            SizedBox(
-              height: 16,
-            ),
-            InputFieldWidget.password(
-              AppLocalizations.of(context)!.oldPassword!,
-              margin: EdgeInsets.only(top: 14, left: 16, right: 16),
-              textEditingController: _oldController,
-              focusNode: _oldNode,
-            ),
-            InputFieldWidget.password(
-              AppLocalizations.of(context)!.newPassword!,
-              margin: EdgeInsets.only(top: 14, left: 16, right: 16),
-              textEditingController: _passwordController,
-              focusNode: _passwordNode,
-            ),
-            InputFieldWidget.password(
-              AppLocalizations.of(context)!.confirmPassword!,
-              margin: EdgeInsets.only(top: 14, left: 16, right: 16),
-              textEditingController: _passwordConfirmController,
-              focusNode: _passwordConfirmNode,
-            ),
-            CustomButton(
-              text: AppLocalizations.of(context)!.submit!,
-              margin: EdgeInsets.only(top: 14, left: 16, right: 16, bottom: 14),
-              radius: BorderRadius.all(Radius.circular(34.0)),
-              onPressed: () {
-                viewModel.requestChangePassword(_oldController,
-                    _passwordController, _passwordConfirmController);
-              },
-            ),
-          ],
-        ),
-      ),
-      bottomNavigationBar: CustomButton(
-        text: locale.forgotPassword!,
-        color: kMainColor,
-        radius: BorderRadius.all(Radius.circular(0.0)),
-        onPressed: () {
-          showAlertDialog(context);
-        },
-      ),
-    ),),),));
+          ),
+        ));
   }
-  showAlertDialog(BuildContext context) {
 
+  showAlertDialog(BuildContext context) {
     // set up the buttons
     Widget cancelButton = TextButton(
       child: Text("Cancel"),
-      onPressed:  () {
+      onPressed: () {
         Navigator.of(context).pop();
       },
     );
     Widget continueButton = TextButton(
       child: Text("Continue"),
-      onPressed:  () async {
-        viewModel
-            .requestForgotPasswordInside();
+      onPressed: () async {
+        viewModel.requestForgotPasswordInside();
       },
     );
 
@@ -192,5 +198,4 @@ class _ChangePasswordBodyState extends BasePageState<ChangePasswordBody, ViewMod
       },
     );
   }
-
 }

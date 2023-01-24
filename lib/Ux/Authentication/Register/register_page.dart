@@ -171,7 +171,7 @@ class _RegisterBodyState
                     "Signup",
                     fontFamily: RFontWeight.REGULAR,
                     textAlign: TextAlign.center,
-                    color: kWhiteColor,
+                    color: kColor_1,
                     fontSize: 27,
                   ),
                   SizedBox(
@@ -193,11 +193,11 @@ class _RegisterBodyState
                       child: DropdownButtonHideUnderline(
                         child: DropdownButton<StateData>(
                           value: dropdownValueState,
-                          icon: Icon(Icons.arrow_drop_down,color: kWhiteColor,),
+                          icon: Icon(Icons.arrow_drop_down,color: kColor_1,),
                           iconSize: 24,
                           elevation: 16,
                           isDense: true,
-                          style: AppStyleText.inputFiledPrimaryText,
+                          style: AppStyleText.inputFiledPrimaryText2,
                           onChanged: (data) {
                             setState(() {
                               dropdownValueState = data!;
@@ -238,11 +238,11 @@ class _RegisterBodyState
                       child: DropdownButtonHideUnderline(
                         child: DropdownButton<DistrictData>(
                           value: dropdownValueDistrict,
-                          icon: Icon(Icons.arrow_drop_down,color: kWhiteColor),
+                          icon: Icon(Icons.arrow_drop_down,color: kColor_1),
                           iconSize: 24,
                           elevation: 16,
                           isDense: true,
-                          style: AppStyleText.inputFiledPrimaryText,
+                          style: AppStyleText.inputFiledPrimaryText2,
                           onChanged: (data) {
                             setState(() {
                               dropdownValueDistrict = data!;
@@ -253,20 +253,20 @@ class _RegisterBodyState
                                   (DistrictData value) {
                                 return DropdownMenuItem<DistrictData>(
                                   value: value,
-                                  child: Text(value.title,style:TextStyle(color: kWhiteColor),),
+                                  child: Text(value.title,style:TextStyle(color: kMainTextColor),),
                                 );
                               }).toList(),
                         ),
                       ),
                     ),
                   ),
-                  InputFieldWidget.text(
+                  InputFieldWidgetWhiteTheme.text(
                     "Name",
                     margin: EdgeInsets.only(top: 14, left: 33, right: 33),
                     textEditingController: _nameController,
                     focusNode: _nameNode,
                   ),
-                  InputFieldWidget.email(
+                  InputFieldWidgetWhiteTheme.email(
                     "Email Address",
                     margin: EdgeInsets.only(top: 14, left: 33, right: 33),
                     textEditingController: _emailController,
@@ -276,7 +276,7 @@ class _RegisterBodyState
                     margin: EdgeInsets.only(top: 14, left: 33, right: 33),
                     child: Stack(
                       children: [
-                        InputFieldWidget.number(
+                        InputFieldWidgetWhiteTheme.number(
                           locale.mobileNumber ?? "",
                           padding: EdgeInsets.only(
                               top: 12, right: 0, left: 40, bottom: 12),
@@ -289,7 +289,7 @@ class _RegisterBodyState
                                 EdgeInsets.symmetric(horizontal: 0, vertical: 8),
                             child: Text(
                               "+${_countrySelected?.phoneCode}",
-                              style: AppStyleText.inputFiledPrimaryText,
+                              style: AppStyleText.inputFiledPrimaryText2,
                             ),
                           ),
                           onTap: () {
@@ -308,13 +308,13 @@ class _RegisterBodyState
                       ],
                     ),
                   ),
-                  InputFieldWidget.password(
+                  InputFieldWidgetWhiteTheme.password(
                     locale.password ?? "",
                     margin: EdgeInsets.only(top: 14, left: 33, right: 33),
                     textEditingController: _passwordController,
                     focusNode: _passwordNode,
                   ),
-                  InputFieldWidget.password(
+                  InputFieldWidgetWhiteTheme.password(
                     "Confirm Password",
                     margin: EdgeInsets.only(top: 14, left: 33, right: 33),
                     textEditingController: _passwordConfirmController,
@@ -381,7 +381,7 @@ class _RegisterBodyState
                       style: TextStyle(
                         fontWeight: RFontWeight.REGULAR,
                         fontSize: 14,
-                        color: kWhiteColor,
+                        color: kColor_1,
                       ),
                       children: [
                         TextSpan(
@@ -389,7 +389,7 @@ class _RegisterBodyState
                             style: TextStyle(
                               fontWeight: RFontWeight.BOLD,
                               fontSize: 18,
-                              color: kWhiteColor,
+                              color: kColor_1,
                             ),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {

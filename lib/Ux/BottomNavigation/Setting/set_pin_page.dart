@@ -74,12 +74,13 @@ class _SetPinBodyState extends BasePageState<SetPinBody, ViewModelSetMPin> {
           ),
           padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
           decoration: BoxDecoration(
-              color: kMainColor,
+              color: kColor_1,
               borderRadius: BorderRadius.circular(12),
               border: Border.all(color: kTitleBackground, width: 2)),
           child:Container(
             decoration: decorationBackground,
             child: Scaffold(
+              backgroundColor: kColor_1,
         extendBodyBehindAppBar: true,
 
         body: SafeArea(
@@ -87,7 +88,7 @@ class _SetPinBodyState extends BasePageState<SetPinBody, ViewModelSetMPin> {
             children: [
               Container(
                 decoration: BoxDecoration(
-                  color: kWalletBackground,
+                  color: kMainButtonColor,
                   borderRadius: BorderRadius.all(Radius.circular(8)),
                 ),
                 padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),

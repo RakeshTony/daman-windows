@@ -27,6 +27,7 @@ import 'package:daman/Ux/Dialog/dialog_country_picker.dart';
 import 'package:daman/main.dart';
 import 'package:permission_handler/permission_handler.dart';
 
+import '../../../Utils/Widgets/input_field_widget_white_theme.dart';
 import '../../../Utils/app_device.dart';
 import '../../../Utils/app_encoder.dart';
 import '../../../Utils/app_log.dart';
@@ -223,7 +224,7 @@ class _LoginBodyState extends BasePageState<LoginBody, ViewModelLogin> {
                           locale.signIn!,
                           fontFamily: RFontWeight.REGULAR,
                           textAlign: TextAlign.center,
-                          color: kWhiteColor,
+                          color: kColor_1,
                           fontSize: 27,
                         ),
                         SizedBox(
@@ -233,12 +234,13 @@ class _LoginBodyState extends BasePageState<LoginBody, ViewModelLogin> {
                           margin: EdgeInsets.only(left: 33, right: 33),
                           child: Stack(
                             children: [
-                              InputFieldWidget.number(
+                              InputFieldWidgetWhiteTheme.number(
                                 locale.mobileNumber ?? "",
                                 padding: EdgeInsets.only(
                                     top: 12, right: 10, left: 40, bottom: 12),
                                 textEditingController: _numberController,
                                 focusNode: _numberNode,
+
                               ),
                               InkWell(
                                 child: Container(
@@ -246,7 +248,7 @@ class _LoginBodyState extends BasePageState<LoginBody, ViewModelLogin> {
                                       horizontal: 0, vertical: 8),
                                   child: Text(
                                     "+${_countrySelected?.phoneCode}",
-                                    style: AppStyleText.inputFiledPrimaryText,
+                                    style: AppStyleText.inputFiledPrimaryText2,
                                   ),
                                 ),
                                 onTap: () {
@@ -266,7 +268,7 @@ class _LoginBodyState extends BasePageState<LoginBody, ViewModelLogin> {
                             ],
                           ),
                         ),
-                        InputFieldWidget.password(
+                        InputFieldWidgetWhiteTheme.password(
                           locale.password ?? "",
                           margin: EdgeInsets.only(top: 14, left: 33, right: 33),
                           textEditingController: _passwordController,
@@ -321,7 +323,7 @@ class _LoginBodyState extends BasePageState<LoginBody, ViewModelLogin> {
                                 style: TextStyle(
                                     fontSize: 16,
                                     fontWeight: RFontWeight.REGULAR,
-                                    color: kWhiteColor,
+                                    color: kColor_1,
                                     fontFamily: RFontFamily.POPPINS),
                               ),
                             ),
@@ -362,7 +364,7 @@ class _LoginBodyState extends BasePageState<LoginBody, ViewModelLogin> {
                             style: TextStyle(
                               fontWeight: RFontWeight.REGULAR,
                               fontSize: 14,
-                              color: kWhiteColor,
+                              color: kColor_1,
                             ),
                             children: [
                               TextSpan(
@@ -370,7 +372,7 @@ class _LoginBodyState extends BasePageState<LoginBody, ViewModelLogin> {
                                   style: TextStyle(
                                     fontWeight: RFontWeight.BOLD,
                                     fontSize: 18,
-                                    color: kWhiteColor,
+                                    color: kColor_1,
                                   ),
                                   recognizer: TapGestureRecognizer()
                                     ..onTap = () {
